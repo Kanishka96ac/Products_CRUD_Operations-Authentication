@@ -1,0 +1,23 @@
+<h1 style="color: white; text-align: center; margin-top: 4vh;"> Welcome {{userDetails.firstName}}
+  {{userDetails.lastName}} !!</h1>
+
+<h1 style="color: white; margin-left: 4%; margin-bottom: 4vh;">Products List</h1>
+
+
+<div class="row" style="margin-left: 2%; margin-right: 4.5%;">
+
+  <div class="col-lg-4"  *ngFor="let newProducts of productsService.products; let i index">
+    <div class="card" style="width: 25rem; margin-left: 4%; margin-bottom: 2vh; height:25vh;" >
+
+      <div class="card-body" >
+        <h5 class="card-title">{{newProducts.name}}</h5>
+        <p class="card-text">{{newProducts.description}}</p>
+        <h4><td>Product Quantity : {{newProducts.quantity}}</td></h4>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+

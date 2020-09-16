@@ -1,0 +1,81 @@
+<div>
+  <h1 style="color: white;">USERS</h1>
+</div>
+
+<div class="row">
+<div class="col-lg-6">
+
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">First Name</label>
+      <input type="text" class="form-control" name="fname">
+
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Last Name</label>
+      <input type="text" class="form-control" name="lname">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" name="email">
+
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Phone</label>
+      <input type="text" class="form-control" name="phone">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleInputPassword1">Address</label>
+      <input type="text" class="form-control" name="address">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<div class="col-lg-6">
+  <input class="btn btn-danger" type="button" (click)="onLogout()" value="Logout"  style="float :right; margin-right: 7%;"/>
+  <div class="card" style="margin: 7%; height: 35vh;">
+  <h1 style="color: black; text-align: center; margin-bottom: 3VH;"> CURRENT USER PROFILE </h1>
+
+<table *ngIf="userDetails" class="table-fill" style="margin-left: 10%;">
+
+  <tbody>
+      <tr>
+          <td>First Name</td>
+          <td>{{userDetails.firstName}}</td>
+      </tr>
+      <tr>
+          <td>Last Name</td>
+          <td>{{userDetails.lastName}}</td>
+      </tr>
+      <tr>
+          <td>Email</td>
+          <td>{{userDetails.email}}</td>
+      </tr>
+      <tr>
+        <td>Phone</td>
+        <td>{{userDetails.phone}}</td>
+    </tr>
+    <tr>
+      <td>Address</td>
+      <td>{{userDetails.address}}</td>
+    </tr>
+    <tr>
+      <td>UID</td>
+      <td>{{userDetails._id}}</td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+</div>
+</div>
+</div>
+
+

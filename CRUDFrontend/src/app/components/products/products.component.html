@@ -1,0 +1,85 @@
+<div>
+  <h1>PRODUCTS</h1>
+</div>
+
+<div class="col-lg-4">
+  <form #productsForm="ngForm" (ngSubmit)="onSubmit(productsForm)">
+
+    <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="productsService.selectedProduct._id">
+
+    <div class="form-group">
+      <label>Product Name</label>
+      <input type="text" class="form-control" name="pname"
+      #pname="ngModel" [(ngModel)]="productsService.selectedProduct.name">
+
+    </div>
+
+    <div class="form-group">
+      <label>Product Description</label>
+      <input type="text" class="form-control" name="pdescription"
+      #pdescription="ngModel" [(ngModel)]="productsService.selectedProduct.description">
+    </div>
+
+    <div class="form-group">
+      <label>Quantity </label>
+      <input type="email" class="form-control" name="pquantity"
+      #pquantity="ngModel" [(ngModel)]="productsService.selectedProduct.quantity">
+
+    </div>
+
+    <div class="form-group">
+      <label>User ID</label>
+      <input type="text" class="form-control" name="uid"
+      #uid="ngModel" [(ngModel)]="productsService.selectedProduct.uid">
+
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <button class="btn btn-primary" type="button" (click)="resetForm(productsForm)">RESET</button>
+        <button class="btn btn-primary " type="submit">SUBMIT</button>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+<br><br>
+
+<h1>Products List</h1>
+<div class="row">
+
+      <div class="card" style="width: 80% !important; margin-left: 4.5%; margin-bottom: 4vh;">
+
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+
+              <th scope="col">PRODUCT NAME </th>
+              <th scope="col">DESCRIPTION</th>
+              <th scope="col">QUANTITY</th>
+              <th scope="col">USER ID</th>
+              <th scope="col">UPDATE</th>
+              <th scope="col">DELETE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let newProducts of productsService.products; let i index">
+
+              <td>{{newProducts.name}}</td>
+              <td>{{newProducts.description}}</td>
+              <td>{{newProducts.quantity}}</td>
+              <td>{{newProducts.uid}}</td>
+
+              <td><button class="btn-primary"  (click)="onEdit(newProducts)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </button></td>
+              <td><button class="btn-primary"  (click)="onDelete(newProducts._id,productsForm)"><i class="fa fa-trash" aria-hidden="true"></i> </button></td>
+            </tr>
+          </tbody>
+        </table>
+
+
+      </div>
+    </div>
+
+

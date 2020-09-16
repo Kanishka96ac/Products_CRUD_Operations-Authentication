@@ -1,0 +1,21 @@
+label{
+  color: #ffff;
+}
+
+form
+{
+  margin-left: 10%;
+  margin-top: 4vh;
+}
+
+h1{
+  margin-left: 4%;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+
+
+button{
+  margin-right: 2%;
+  margin-top: 2%;
+}
